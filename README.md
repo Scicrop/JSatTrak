@@ -1,6 +1,8 @@
 # JSatTrak
 Java Satellite Tracker
 
+![Java CI with Maven](https://github.com/Scicrop/JSatTrak/workflows/Java%20CI%20with%20Maven/badge.svg?event=public)
+
 This is a fork of a great application created and developed by Shawn E. Gano (shawn@gano.name), whose development started in 2008.
 The original site can be found at: https://www.gano.name/shawn/JSatTrak/
 The main repository can be found at: https://github.com/sgano/JSatTrak
