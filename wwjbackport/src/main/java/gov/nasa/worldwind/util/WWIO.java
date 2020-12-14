@@ -11,14 +11,37 @@ All Rights Reserved.
  */
 package gov.nasa.worldwind.util;
 
+
 import com.sun.opengl.util.BufferUtil;
 import gov.nasa.worldwind.Configuration;
 import gov.nasa.worldwind.avlist.AVKey;
 import gov.nasa.worldwind.exception.WWRuntimeException;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.ByteArrayInputStream;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileFilter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.RandomAccessFile;
+import java.io.Reader;
+import java.io.UnsupportedEncodingException;
+//import java.io.*;
 import java.net.*;
-import java.nio.*;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.MappedByteBuffer;
+//import java.nio.*;
 import java.nio.channels.*;
 import java.nio.charset.Charset;
 import java.util.*;
@@ -876,7 +899,7 @@ public class WWIO
             {
                 ByteBuffer biggerBuffer = allocateDirect ? ByteBuffer.allocateDirect(buffer.limit() + PAGE_SIZE)
                     : ByteBuffer.allocate(buffer.limit() + PAGE_SIZE);
-                biggerBuffer.put((ByteBuffer) buffer.rewind());
+                biggerBuffer.put((ByteBuffer) buffer);
                 buffer = biggerBuffer;
             }
         }

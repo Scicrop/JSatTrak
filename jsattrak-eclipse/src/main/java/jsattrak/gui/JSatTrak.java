@@ -23,16 +23,6 @@
 
 package jsattrak.gui;
 
-import bsh.Interpreter;
-import bsh.util.JConsole;
-import bsh.util.NameCompletionTable;
-import com.jgoodies.looks.plastic.PlasticLookAndFeel;
-import com.jgoodies.looks.plastic.theme.ExperienceBlue;
-import jsattrak.objects.GroundStation;
-import jsattrak.about.AboutDialog;
-import com.thoughtworks.xstream.XStream;
-import commandclient.CommandClientGUI;
-import gov.nasa.worldwind.awt.WorldWindowGLCanvas;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GraphicsEnvironment;
@@ -57,6 +47,7 @@ import java.util.Vector;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
+
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
 import javax.swing.JDesktopPane;
@@ -72,11 +63,24 @@ import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
+
+import com.jgoodies.looks.Options;
+import com.jgoodies.looks.plastic.PlasticLookAndFeel;
+import com.jgoodies.looks.plastic.theme.ExperienceBlue;
+import com.thoughtworks.xstream.XStream;
+
+import bsh.Interpreter;
+import bsh.util.JConsole;
+import bsh.util.NameCompletionTable;
+import commandclient.CommandClientGUI;
+import gov.nasa.worldwind.awt.WorldWindowGLCanvas;
 import jguiserver.GuiServer;
+import jsattrak.about.AboutDialog;
 import jsattrak.coverage.CoverageAnalyzer;
 import jsattrak.coverage.JSatTrakTimeDependent;
 import jsattrak.objects.AbstractSatellite;
 import jsattrak.objects.CustomSatellite;
+import jsattrak.objects.GroundStation;
 import jsattrak.objects.SatelliteTleSGP4;
 import jsattrak.utilities.ConsoleDialog;
 import jsattrak.utilities.CustomFileFilter;
@@ -87,9 +91,9 @@ import jsattrak.utilities.JstSaveClass;
 import jsattrak.utilities.LafChanger;
 import jsattrak.utilities.SatPropertyPanelSave;
 import jsattrak.utilities.TLE;
+import jsattrak.utilities.TLEDownloader;
 import name.gano.astro.bodies.Sun;
 import name.gano.astro.time.Time;
-import jsattrak.utilities.TLEDownloader;
 import name.gano.file.FileTypeFilter;
 import name.gano.file.SaveImageFile;
 import name.gano.swingx.fullscreen.ToggleFullscreen2DWindow;
@@ -260,7 +264,7 @@ public class JSatTrak extends javax.swing.JFrame implements InternalFrameListene
         initComponents();
         
         // show shadow behind menus
-        //Options.setPopupDropShadowEnabled(true);
+        Options.setPopupDropShadowEnabled(true);
         
         // setup look for toolbars:
        //jToolBar.putClientProperty("JToolBar.isRollover", Boolean.TRUE);
@@ -792,6 +796,7 @@ public class JSatTrak extends javax.swing.JFrame implements InternalFrameListene
         });
         jToolBar.add(realTimeModeCheckBox);
 
+        
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/other/xclock.png"))); // NOI18N
         jLabel2.setToolTipText("Real Time Mode"); // NOI18N
         jToolBar.add(jLabel2);

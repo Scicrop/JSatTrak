@@ -13,7 +13,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 
 	
 	<artifactId>jsattrak-eclipse</artifactId>
-	<version>4.2.4</version>
+	<version>4.2.5</version>
 	<packaging>jar</packaging>
 	<name>jsattrak-eclipse</name>
 
@@ -87,13 +87,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 		<dependency>
 			<groupId>com.github.insubstantial</groupId>
 			<artifactId>trident</artifactId>
-			<version>7.3</version>
+			<version>6.2</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.github.insubstantial</groupId>
 			<artifactId>substance-swingx</artifactId>
-			<version>7.3</version>
+			<version>6.2</version>
 		</dependency>
 
 		<dependency>
@@ -109,6 +109,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 			<version>1.1.1</version>
 		</dependency>
 
+
+    <dependency>
+        <groupId>org.apache.xmlgraphics</groupId>
+        <artifactId>batik</artifactId>
+        <version>1.10</version>
+        <type>pom</type>
+    </dependency>
 
 
 
@@ -141,6 +148,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
                     <include>**/*.png</include>
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.dds</include>
+                    
                 </includes>
             </resource>
         </resources>

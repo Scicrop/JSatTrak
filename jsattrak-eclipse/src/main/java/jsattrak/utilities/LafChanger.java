@@ -75,7 +75,7 @@ public class LafChanger
 
             boolean canBeDecoratedByLAF = UIManager.getLookAndFeel().getSupportsWindowDecorations();
 
-             //System.out.println("------------------");
+           
             for (Window window : Window.getWindows())
             {
                 SwingUtilities.updateComponentTreeUI(window);
@@ -87,7 +87,7 @@ public class LafChanger
                 }
                 else if(window instanceof JDialog)
                 {
-                     //System.out.println("Jdialog Window:" +  ((JDialog)window).getTitle() );
+                     System.out.println("Jdialog Window:" +  ((JDialog)window).getTitle() );
 
                      if( canBeDecoratedByLAF !=  ((JDialog)window).isUndecorated() )
                      {
