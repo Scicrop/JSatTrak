@@ -20,3 +20,8 @@ There is an important thing to notice, this project compiles with Java 8 (Both O
 
 Now, with one mvn command the project is built: `mvn clean install package`. Thus, the main idea is to have a easy way to keep the project alive.
 
+## Alternatives
+
+- Gpreditc
+- Orbitron
+
